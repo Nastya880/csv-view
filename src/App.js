@@ -1,23 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import * as ReactDOM from 'react-dom';
+// import './App.scss';
+import Main from './components/main/Main';
+import Data from './components/data/Data';
+import Papa from 'papaparse';
 
 function App() {
+  const [fileData, setFileData] = useState(null);
+
+  useEffect(() => {
+    const localStoredData = localStorage.getItem('csv');
+    if (localStoredData) {
+      setFileData(JSON.parse(localStoredData));
+    }
+  }, []);
+
+  const handleFileUpload = (file) => {
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      try {
+        const textData = event.target.result;
+
+        Papa.parse(textData, {
+          header: false,
+          complete: (result) => {
+            const parsedData = result.data.slice(1).map((col) => ({
+              name: col[0],
+              phone: col[1],
+              email: col[2],
+              bday: col[3],
+              address: col[4],
+            }));
+  
+            setFileData(parsedData);
+            localStorage.setItem('csv', JSON.stringify(parsedData));
+          },
+        });
+      } catch (error) {
+        console.log(error);
+        alert(error);
+        // const root = ReactDOM.createRoot(
+        //   document.querySelector('.error__container')
+        // );
+        // const element = <div>Hello, world</div>;
+        // root.render(element);
+      }
+    };
+
+    reader.readAsText(file);
+  };
+
+  const handleNewFileUpload = () => {
+    setFileData(null);
+    localStorage.removeItem('csv');
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { fileData ? (
+        <Data data={ fileData } onNewFileUpload={ handleNewFileUpload } />
+      ) : (
+        <Main onFileUpload={ handleFileUpload } />
+      )}
     </div>
   );
 }
