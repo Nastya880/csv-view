@@ -1,0 +1,88 @@
+$color-default-black:        #000000;
+$color-default-white:        #ffffff;
+$color-blue-marguerite:      #6346b4;
+$color-biloba-flower:        #a88ef0;
+$color-christalle:           #311f63;
+$color-bittersweet:          #ff6565;
+$color-very-light-grey:      #cbcbcb;
+
+.visually-hidden {
+    display: none;
+}
+
+h1,
+p {
+    font-family: 'Noto Sans',  sans-serif;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.error__wrapper,
+.button-upload__container {
+    box-shadow: 2px 4px 9.9px 0 rgba($color-default-black, 0.25);
+    border-radius: 10px;
+}
+
+.error__wrapper {
+    position: absolute;
+    left: 25%;
+    top: 45px;
+    width: 50%;
+    height: 89px; 
+    background-color: $color-bittersweet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error__wrapper p {
+    color: $color-default-white;
+    font-size: 20px;
+}
+
+.button-upload__container {
+    margin: auto;
+    background-color: $color-default-white;
+    width: 823px;
+    height: 367px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 23%;
+}
+
+.button-upload__container p {
+    margin-top:  0px;
+    font-size: 24px;
+}
+
+.button-upload__wrapper {
+    width: 274px;
+    height: 48px;
+    background-color: $color-blue-marguerite;
+    border-radius: 5px;
+    margin-top: 52px;
+    
+    &:hover {
+        background-color: $color-biloba-flower;
+    }
+    
+    &:active {
+        background-color: $color-christalle;
+    }
+}
+
+
+
+.button-upload__wrapper label {
+    font-size: 16px;
+    color: $color-default-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}

@@ -1,0 +1,136 @@
+$color-default-black:              #000000;
+$color-default-white:              #ffffff;
+$color-blue-marguerite:            #6346b4;
+$color-blue-marguerite-transparent:  rgba($color-blue-marguerite,0.25);
+$color-biloba-flower:              #a88ef0;
+$color-christalle:                 #311f63;
+$color-very-light-grey:            #cbcbcb; 
+$color-silver:                     #C0C0C0;
+$color-suva-grey:                  #898989;
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: $color-very-light-grey;
+}
+
+table {
+    border-radius: 10px 0 0 0;
+    width: 100%;
+    height: 951px;
+    margin-top: 19px;
+    margin-left: 33px;
+    border-collapse: collapse;
+    background-color: $color-default-white;
+    table-layout: fixed;
+}
+
+th,
+td {
+    color: $color-default-black;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: solid $color-suva-grey;
+}
+
+th {
+    border-right: 1px solid $color-silver;
+    font-family: 'Inter',  sans-serif;
+    font-size: 14px;
+    border-width: 2px;
+    padding-top: 19px;
+}
+
+td {
+    font-family: 'Noto Sans',  sans-serif;
+    font-size: 12px;
+    border: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+tr {
+    border-width: 1px;
+    border-bottom: 1px solid $color-suva-grey;
+
+    &:hover {
+        background-color: $color-blue-marguerite-transparent;
+        cursor: url(icon/icon-cursor.svg), pointer;
+    }
+
+}
+
+.item {
+    &-name,
+    &-name-header {
+        padding-left: 35px;
+        max-width: 277px;
+        width: 277px;
+        text-overflow: ellipsis;
+    }
+
+    &-phone,
+    &-email,
+    &-phone-header {
+        padding-left: 21px;
+        width: 225px;
+        max-width: 225px;
+        text-overflow: ellipsis;
+    }
+
+    &-email,
+    &-email-header {
+        margin: 0;
+        max-width: 165px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &-email-header {
+        padding-left: 23px;
+        width: 165px;
+    }
+    
+    &-bday,
+    &-bday-header {
+        padding-left: 24px;
+        margin: 0;
+        width: 145px;
+    }
+
+    &-address,
+    &-address-header {
+        padding-left: 18px;
+    }
+}
+
+button {
+    width: 164px;
+    height: 36px;
+    margin-top: 18px;
+    border-radius: 5px;
+    margin-left: 87.6%;
+    background-color: $color-blue-marguerite;
+    border: none;
+
+    &:hover {
+        background-color: $color-biloba-flower;
+    }
+    
+    &:active {
+        background-color: $color-christalle;
+    }
+}
+
+.button-new-upload p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16.34px;
+    margin-top: 10px;
+    color: $color-default-white;
+}
+
