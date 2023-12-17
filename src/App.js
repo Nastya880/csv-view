@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import * as ReactDOM from 'react-dom';
-// import './App.scss';
 import Main from './components/main/Main';
 import Data from './components/data/Data';
 import Papa from 'papaparse';
@@ -39,12 +37,7 @@ function App() {
         });
       } catch (error) {
         console.log(error);
-        alert(error);
-        // const root = ReactDOM.createRoot(
-        //   document.querySelector('.error__container')
-        // );
-        // const element = <div>Hello, world</div>;
-        // root.render(element);
+        alert('Ошибка в содержании файла или правах доступа');
       }
     };
 

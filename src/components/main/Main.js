@@ -8,7 +8,6 @@ const Main = ({ onFileUpload }) => {
       const file = evt.target.files[0];
 
       if (file.type === 'text/csv') {
-        console.log(file.type);
         onFileUpload(file);
       } else {
         setprintError(true);
@@ -31,13 +30,11 @@ const Main = ({ onFileUpload }) => {
                 }
             </div>
             <div className="button-upload__container">
-              {/* <div className="description"> */}
-                  <p>Выберите файл в&nbsp;формате CSV</p>
-                  <div className="button-upload__wrapper">
-                      <input className="visually-hidden" type="file" id="button-upload" onChange={ handleFileChange } />
-                      <label htmlFor="button-upload">Выберите файл</label>
-                  </div>
-                {/* </div> */}
+              <p>Выберите файл в&nbsp;формате CSV</p>
+              <div className="button-upload__wrapper">
+                <input className="visually-hidden" type="file" id="button-upload" onChange={ handleFileChange } />
+                <label htmlFor="button-upload">Выберите файл</label>
+              </div>
             </div>
         </div>
     );

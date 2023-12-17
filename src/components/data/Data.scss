@@ -34,7 +34,6 @@ td {
     text-align: left;
     padding-top: 15px;
     padding-bottom: 15px;
-    // padding-left: 35px;
     border-bottom: solid $color-suva-grey;
 }
 
@@ -44,16 +43,13 @@ th {
     font-size: 14px;
     border-width: 2px;
     padding-top: 19px;
-    // display: inline-block;
-    // flex-direction: ;
 }
 
 td {
     font-family: 'Noto Sans',  sans-serif;
     font-size: 12px;
     border: none;
-
-    white-space: nowrap; /* Запрещаем перенос строк */
+    white-space: nowrap;
     overflow: hidden;
 }
 
@@ -63,7 +59,7 @@ tr {
 
     &:hover {
         background-color: $color-blue-marguerite-transparent;
-        cursor: url(icon-cursor.svg), pointer;
+        cursor: url(icon/icon-cursor.svg), pointer;
     }
 
 }
@@ -88,13 +84,9 @@ tr {
 
     &-email,
     &-email-header {
-        // padding-right: 0px;
-        // width: 40px;
-        // display: block;
         margin: 0;
         max-width: 165px;
-        // background-color: red;
-        white-space: nowrap; /* Запрещаем перенос строк */
+        white-space: nowrap;
         text-overflow: ellipsis;
     }
 
@@ -107,14 +99,12 @@ tr {
     &-bday-header {
         padding-left: 24px;
         margin: 0;
-        // background-color: red;
         width: 145px;
     }
 
     &-address,
     &-address-header {
         padding-left: 18px;
-        // width: 300px;
     }
 }
 
@@ -122,7 +112,6 @@ button {
     width: 164px;
     height: 36px;
     margin-top: 18px;
-    // margin-right: 14px;
     border-radius: 5px;
     margin-left: 87.6%;
     background-color: $color-blue-marguerite;
@@ -142,7 +131,6 @@ button {
     font-size: 12px;
     line-height: 16.34px;
     margin-top: 10px;
-    // vertical-align: bottom;
     color: $color-default-white;
 }
 
