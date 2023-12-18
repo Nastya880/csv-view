@@ -19,7 +19,6 @@ const Main = ({ onFileUpload }) => {
   
     return (
         <div>
-            <div className='header'></div>
             <div className="error__container">
                 { printError &&
                   (
