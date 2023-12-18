@@ -3,7 +3,7 @@ import Main from './components/main/Main';
 import Data from './components/data/Data';
 import Papa from 'papaparse';
 
-function App() {
+const App = () => {
   const [fileData, setFileData] = useState(null);
 
   useEffect(() => {
@@ -58,6 +58,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;
